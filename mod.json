@@ -1,0 +1,91 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081"
+	},
+	"id": "splitzblob.click-before-frames",
+	"name": "Click Before Frames",
+	"version": "v1.4.0",
+	"developer": "splitzblob",
+	"description": "Holds clicks that come a little too early until they're safe, and evens out very short taps. Floating V menu on every screen.",
+	"settings": {
+		"show-v": {
+			"type": "bool",
+			"name": "Show V button",
+			"description": "Shows the floating V button. The pause menu always has one.",
+			"default": true
+		},
+		"v-size": {
+			"type": "float",
+			"name": "V button size",
+			"default": 1.0,
+			"min": 0.5,
+			"max": 2.0
+		},
+		"low-ticks": {
+			"type": "int",
+			"name": "LOW max delay (ticks)",
+			"description": "240 ticks = 1 second. 4 ticks = 1 frame at 60 FPS.",
+			"default": 4,
+			"min": 1,
+			"max": 32
+		},
+		"med-ticks": {
+			"type": "int",
+			"name": "MED max delay (ticks)",
+			"description": "240 ticks = 1 second. 4 ticks = 1 frame at 60 FPS.",
+			"default": 8,
+			"min": 1,
+			"max": 32
+		},
+		"high-ticks": {
+			"type": "int",
+			"name": "HIGH max delay (ticks)",
+			"description": "240 ticks = 1 second. 4 ticks = 1 frame at 60 FPS.",
+			"default": 16,
+			"min": 1,
+			"max": 32
+		},
+		"fly-min-ticks": {
+			"type": "int",
+			"name": "Ship / UFO / Swing minimum tap (ticks)",
+			"description": "Taps shorter than this are stretched to this length. 0 = off.",
+			"default": 6,
+			"min": 0,
+			"max": 24
+		},
+		"wave-min-ticks": {
+			"type": "int",
+			"name": "Wave minimum tap (ticks)",
+			"description": "Taps shorter than this are stretched to this length. 0 = off.",
+			"default": 4,
+			"min": 0,
+			"max": 24
+		},
+		"horizon-ticks": {
+			"type": "int",
+			"name": "Prediction length (ticks)",
+			"description": "How far ahead the prediction looks. Higher is smarter but slower.",
+			"default": 120,
+			"min": 20,
+			"max": 300
+		},
+		"sim-budget-ms": {
+			"type": "float",
+			"name": "Max prediction time (ms)",
+			"description": "If the search takes longer than this, your click goes through normally.",
+			"default": 8,
+			"min": 1,
+			"max": 20
+		},
+		"ghost-as-p1": {
+			"type": "bool",
+			"name": "Ghost counts as Player 1",
+			"description": "Advanced. Leave on. Only turn off if would-die in the V menu stats stays at 0 while you keep dying. Applies next level.",
+			"default": true
+		}
+	},
+	"dependencies": {
+		"geode.node-ids": ">=v1.23.3"
+	}
+}
